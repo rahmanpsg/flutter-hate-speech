@@ -18,8 +18,9 @@ class KlasifikasiView extends StatelessWidget {
         KlasifikasiViewModel model,
         Widget? child,
       ) {
-        return Scaffold(
-          body: SingleChildScrollView(
+        return Container(
+          color: Colors.white,
+          child: SingleChildScrollView(
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [

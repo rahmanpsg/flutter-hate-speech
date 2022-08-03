@@ -52646,5 +52646,57 @@
     {
         "text": "USER Mana situ ngasih(\": itu cuma foto ya kutil onta'",
         "label": 1
+    },
+    {
+        "text": "Anjing berkaki empat",
+        "label": 0
+    },
+    {
+        "text": "Kucing berkaki empat",
+        "label": 0
+    },
+    {
+        "text": "Kambing berkaki empat",
+        "label": 0
+    },
+    {
+        "text": "Onta berkaki empat",
+        "label": 0
+    },
+    {
+        "text": "Sapi berkaki empat",
+        "label": 0
+    },
+    {
+        "text": "Manusia berkaki dua",
+        "label": 0
+    },
+    {
+        "text": "Anjing adalah hewan peliharaan",
+        "label": 0
+    },
+    {
+        "text": "Orang papua mirip monyet",
+        "label": 1
+    },
+    {
+        "text": "Anjing hewan peliharaan",
+        "label": 0
+    },
+    {
+        "text": "Papua anjing",
+        "label": 1
+    },
+    {
+        "text": "Kalimantan tempat buang jin",
+        "label": 1
+    },
+    {
+        "text": "Kamu mirip monyet",
+        "label": 1
+    },
+    {
+        "text": "Papua Radikal, hitam, jelek, dan mirip monyet",
+        "label": 1
     }
 ]

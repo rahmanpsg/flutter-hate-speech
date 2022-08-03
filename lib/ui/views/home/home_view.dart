@@ -17,72 +17,84 @@ class HomeView extends StatelessWidget {
         HomeViewModel model,
         Widget? child,
       ) {
-        return Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: secondaryColor,
-                ),
-                padding: const EdgeInsets.all(16),
-                child: Text(
-                  'Selamat datang di aplikasi Hate Speech Classification (HSC). Menggunakan metode naive bayes untuk mengklasifikasi kalimat yang mengandung kata-kata yang tidak bijak.',
-                  style: regularTextStyle.copyWith(color: lightColor),
-                ),
-              ),
-              const SizedBox(height: 16),
-              Flexible(
-                child: Container(
+        return Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     color: secondaryColor,
                   ),
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 16),
-                      const Text(
-                        'Daftar Kata-kata yang tidak bijak',
-                        style: mediumTextStyle,
-                      ),
-                      const SizedBox(height: 8),
-                      const Divider(
-                        color: mainColor,
-                      ),
-                      Expanded(
-                        child: Scrollbar(
-                          thickness: 10,
-                          radius: const Radius.circular(8),
-                          child: ListView.separated(
-                            itemCount: model.hateWords.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              return ListTile(
-                                leading: Text(
-                                  "${index + 1}",
-                                  style: regularTextStyle,
-                                ),
-                                title: Text(
-                                  model.hateWords[index].text,
-                                  style: regularTextStyle,
-                                ),
-                                trailing: Text(
-                                  model.hateWords[index].getCategory(),
-                                  style: regularTextStyle,
-                                ),
-                              );
-                            },
-                            separatorBuilder: (_, index) => const Divider(
-                              color: lightGreyColor,
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    'Selamat datang di aplikasi Hate Speech Classification (HSC). Menggunakan metode naive bayes untuk mengklasifikasi kalimat yang mengandung kata-kata yang tidak bijak.',
+                    style: regularTextStyle.copyWith(color: lightColor),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: secondaryColor,
+                    ),
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 16),
+                        const Text(
+                          'Daftar Kata-kata yang tidak bijak',
+                          style: mediumTextStyle,
+                        ),
+                        const SizedBox(height: 8),
+                        const Divider(
+                          color: mainColor,
+                        ),
+                        Expanded(
+                          child: Scrollbar(
+                            thickness: 10,
+                            radius: const Radius.circular(8),
+                            child: ListView.separated(
+                              itemCount: model.hateWords.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                final hateWord = model.hateWords[index];
+
+                                return ListTile(
+                                  leading: Text(
+                                    "${index + 1}",
+                                    style: regularTextStyle,
+                                  ),
+                                  title: Text(
+                                    hateWord.text,
+                                    style: regularTextStyle,
+                                  ),
+                                  trailing: SizedBox(
+                                    width: 50,
+                                    child: Text(
+                                      hateWord.getCategory(),
+                                      style: regularTextStyle.copyWith(
+                                        color: hateWord.label == 1
+                                            ? dangerColor
+                                            : null,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              separatorBuilder: (_, index) => const Divider(
+                                color: lightGreyColor,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },

@@ -26,13 +26,9 @@ class HateWordModel {
   String getCategory() {
     switch (label) {
       case 1:
-        return 'Lemah';
-      case 2:
-        return 'Menengah';
-      case 3:
-        return 'Kuat';
+        return 'Ujaran Kebencian';
       default:
-        return 'Bukan';
+        return 'Bukan Ujaran Kebencian';
     }
   }
 }
